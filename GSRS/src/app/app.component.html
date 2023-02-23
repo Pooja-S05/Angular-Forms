@@ -1,0 +1,25 @@
+<button class="btn btn-primary">Submit</button>
+<div class="container-fluid">
+    <h3>Forms</h3>
+    <form>
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Mobile</label>
+            <input type="tel" class="form-control">
+        </div>
+        <div class="form-group">
+            <select>
+                <option *ngFor="let item of Topics">{{item}}</option>
+            </select>
+
+        </div>
+    </form>
+</div>
