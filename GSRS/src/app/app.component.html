@@ -5,11 +5,35 @@
     By doing So NgForm Directive Gives that variable to access of the values in every FormControls. -->
 
     <!-- userForm can be used as a reference for ngForm directive -->
+
+
+    <!-- To DataBind the data in the Template Driven Form 3 directives plays a major role they are 
+       ngForm
+       ngModel
+       ngModelGroup -->
     <form  #userForm="ngForm">
 
-        {{ userForm.value | json}} 
+       {{ userForm.value | json}}   <!-- We can send the data to the server from the form using userForm.Value -->
 
-        
+        <div ngModelGroup="address">
+            <div class="form-group">
+                <label>Street</label>
+                <input class="form-control" type="text" name="Street" ngModel>
+            </div>
+            <div class="form-group">
+                <label>City</label>
+                <input class="form-control" type="text" name="city" ngModel>
+            </div>
+            <div class="form-group">
+                <label>State</label>
+                <input class="form-control" type="text" name="State" ngModel>
+            </div>
+            <div class="form-group">
+                <label>Country</label>
+                <input class="form-control" type="text" name="Country" ngModel>
+            </div>
+        </div>
+
         <div class="form-group">
             <label>Name</label>
             <input type="text" class="form-control" name="UserName" ngModel > <!-- Even if we ngModel it wont show the  values in json,It will only show the inputs that have name attribute in it -->
