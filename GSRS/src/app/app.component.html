@@ -14,42 +14,30 @@
     <form  #userForm="ngForm">
 
        {{ userForm.value | json}}   <!-- We can send the data to the server from the form using userForm.Value -->
+ <hr/>
+       {{userModel|json}}
+         
+       <!-- Now We have done the Property binding.In which we took the data from the model and store it in a variable called userModel in ts file and we have given some set of values for them in ts
+       in HTMl we have done property binding /(one way binding) to get the model value to the html
 
-        <div ngModelGroup="address">
-            <div class="form-group">
-                <label>Street</label>
-                <input class="form-control" type="text" name="Street" ngModel>
-            </div>
-            <div class="form-group">
-                <label>City</label>
-                <input class="form-control" type="text" name="city" ngModel>
-            </div>
-            <div class="form-group">
-                <label>State</label>
-                <input class="form-control" type="text" name="State" ngModel>
-            </div>
-            <div class="form-group">
-                <label>Country</label>
-                <input class="form-control" type="text" name="Country" ngModel>
-            </div>
-        </div>
+       The changes that are made in HTML will reflect in ngForm value but not reflected in the userModel values as it is one way binding. -->
 
         <div class="form-group">
             <label>Name</label>
-            <input type="text" class="form-control" name="UserName" ngModel > <!-- Even if we ngModel it wont show the  values in json,It will only show the inputs that have name attribute in it -->
+            <input type="text" class="form-control" name="UserName" [ngModel]="userModel.name" > <!-- Even if we ngModel it wont show the  values in json,It will only show the inputs that have name attribute in it -->
         </div>
 
         <div class="form-group">
             <label>Email</label>
-            <input type="email" class="form-control" name="Email" ngModel>
+            <input type="email" class="form-control" name="Email" [ngModel]="userModel.email">
         </div>
         <div class="form-group">
             <label>Mobile</label>
-            <input type="tel" class="form-control" name="Mobile" ngModel>
+            <input type="tel" class="form-control" name="Mobile" [ngModel]="userModel.phone">
         </div>
         <div class="form-group">
             <label for="Topics_DropDown">Topics</label>
-            <select id="Topics_DropDown" name="Preference" ngModel>
+            <select id="Topics_DropDown" name="Preference" [ngModel]="userModel.topic">
                 <option selected> Im interested in :</option>
                 <option *ngFor="let item of Topics">{{item}}</option>
             </select>
@@ -60,17 +48,17 @@
         <div>
             <label>Time Preference</label>
             <div class="form-check">
-                <input class="form-check-input"  ngModel type="radio" name="MorningPreference" >
+                <input class="form-check-input"  [ngModel]="userModel.timePreference" type="radio" name="MorningPreference" >
                 <label class="form-check-label">Morning 10-5</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" ngModel type="radio" name="MorningPreference" >
+                <input class="form-check-input" [ngModel]="userModel.timePreference" type="radio" name="MorningPreference" >
                 <label class="form-check-label" >Evening 6-10</label>
             </div>
         </div>
 
         <div class="form-check">
-            <input class="form-check-input" name="CheckBox" ngModel type="checkbox">
+            <input class="form-check-input" name="CheckBox" [ngModel]="userModel.subscribe" type="checkbox">
             <label class ="form-check-label"> Click to send Adds</label>
         </div>
         <button class="btn btn-primary">Submit</button>
