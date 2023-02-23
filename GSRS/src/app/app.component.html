@@ -9,22 +9,23 @@
 
         {{ userForm.value | json}} 
 
+        
         <div class="form-group">
             <label>Name</label>
-            <input type="text" class="form-control" ngModel > <!-- Even if we ngModel it wont show the  values in json,It will only show the inputs that have name attribute in it -->
+            <input type="text" class="form-control" name="UserName" ngModel > <!-- Even if we ngModel it wont show the  values in json,It will only show the inputs that have name attribute in it -->
         </div>
 
         <div class="form-group">
             <label>Email</label>
-            <input type="email" class="form-control" ngModel>
+            <input type="email" class="form-control" name="Email" ngModel>
         </div>
         <div class="form-group">
             <label>Mobile</label>
-            <input type="tel" class="form-control" ngModel>
+            <input type="tel" class="form-control" name="Mobile" ngModel>
         </div>
         <div class="form-group">
             <label for="Topics_DropDown">Topics</label>
-            <select id="Topics_DropDown" ngModel>
+            <select id="Topics_DropDown" name="Preference" ngModel>
                 <option selected> Im interested in :</option>
                 <option *ngFor="let item of Topics">{{item}}</option>
             </select>
@@ -45,7 +46,7 @@
         </div>
 
         <div class="form-check">
-            <input class="form-check-input" ngModel type="checkbox">
+            <input class="form-check-input" name="CheckBox" ngModel type="checkbox">
             <label class ="form-check-label"> Click to send Adds</label>
         </div>
         <button class="btn btn-primary">Submit</button>
