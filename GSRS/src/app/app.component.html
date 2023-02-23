@@ -1,10 +1,17 @@
 
 <div class="container-fluid">
     <h3>Forms</h3>
-    <form>
+    <!-- Use Template Reference variable and assign that to ngForm.
+    By doing So NgForm Directive Gives that variable to access of the values in every FormControls. -->
+
+    <!-- userForm can be used as a reference for ngForm directive -->
+    <form  #userForm="ngForm">
+
+        {{ userForm.value | json}} <!-- This wont show any output even after applying changes in the forms.as ir dont know which form controls need to be tracked for that we will use ngmodel in every form controls. -->
+
         <div class="form-group">
             <label>Name</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" >
         </div>
 
         <div class="form-group">
