@@ -1,4 +1,4 @@
-<button class="btn btn-primary">Submit</button>
+
 <div class="container-fluid">
     <h3>Forms</h3>
     <form>
@@ -22,5 +22,27 @@
                 <option *ngFor="let item of Topics">{{item}}</option>
             </select>
         </div>
+           <!-- Class=Form-check-label doesnt have any effect on the form 
+           but form-check-input has slight changes...
+           name of two radio buttons should be same so that we can select either one. -->
+        <div>
+            <label>Time Preference</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="MorningPreference" >
+                <label class="form-check-label">Morning 10-5</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="MorningPreference" >
+                <label class="form-check-label" >Evening 6-10</label>
+            </div>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox">
+            <label class ="form-check-label"> Click to send Adds</label>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+        
+
     </form>
 </div>
